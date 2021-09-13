@@ -84,8 +84,10 @@ public class TestCode : MonoBehaviour
                                     | CaptureFlags.NativeAllocationSites
                                     | CaptureFlags.NativeStackTraces;
 
+        string initTime = DateTime.Now.ToString("yyyyMMddHHmmss");
+        string takeSnapshotPath = "d:/memorysnap/pc_" + initTime + ".snap";
         //QueryMemoryProfiler.TakeSnapshot(basePath, snapshotCaptureFunc, m_CaptureFlags);
-        UnityEngine.Profiling.Memory.Experimental.MemoryProfiler.TakeSnapshot("d:/tempmemory.snap", snapshotCaptureFunc, captureFlags);
+        UnityEngine.Profiling.Memory.Experimental.MemoryProfiler.TakeSnapshot(takeSnapshotPath, snapshotCaptureFunc, captureFlags);
     }
     public void CollectMetadata(MetaData data)
     {
